@@ -30,13 +30,6 @@ class ViewController: UIViewController {
                 let cityName = swiftyJsonVar["name"].rawString()
                 let weatherDesc = swiftyJsonVar["weather"][0]["description"].rawString()?.uppercased()
                 let mainTemp = swiftyJsonVar["main"]["temp"].rawString()
-//                mainTemp = mainTemp.rawString()
-               // print(cityName)
-//                print(swiftyJsonVar["weather"][0]["description"])
-//                print(swiftyJsonVar["main"]["temp"])
-        
-
-                
                 DispatchQueue.main.async {
                     self.city.text = cityName
                     self.tempDesc.text = weatherDesc
@@ -45,33 +38,8 @@ class ViewController: UIViewController {
                     self.tempDesc.alpha = 1
                     self.temperature.alpha = 1
                 }
-                
-//                print(swiftyJsonVar["name"])
-//                if let resData = swiftyJsonVar["name"].arrayObject {
-//                    self.city = resData as! [[String:AnyObject]]
-//                }
-//                if self.arrRes.count > 0 {
-//                    self.tblJSON.reloadData()
-//                }
             }
-//            print(resData.result.value!)
-//            let strOutput = String(data : resData.result.value!, encoding : String.Encoding.utf8)
-//            print(strOutput["name"])
         }
-//        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q="+self.cityInput.text!+"&appid=3ee8177904d514f2cc9645f283cc8416&units=metric")!
-//        
-//        let task = URLSession.shared.dataTask(with: url){(data, response, error) in
-//            if error != nil {
-//                print(error ?? "Some error fetching data from URL")
-//            } else {
-//                if let urlContent = data{
-//                    let wjson = JSON(urlContent)
-//                    print(wjson)
-//                }
-//            }
-//        }
-//        
-//        task.resume()
     }
 
     override func viewDidLoad() {
