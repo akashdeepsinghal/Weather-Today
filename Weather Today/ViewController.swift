@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
         view.endEditing(true)
         self.hideKeyboardWhenTappedAround()
-        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?q="+self.cityInput.text!+"&appid=3ee8177904d514f2cc9645f283cc8416&units=metric").responseData { (resData) -> Void in
+        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?q="+self.cityInput.text!.replacingOccurrences(of: " ", with: "%20")+"&appid=3ee8177904d514f2cc9645f283cc8416&units=metric").responseData { (resData) -> Void in
             if((resData.result.value) != nil) {
                 let swiftyJsonVar = JSON(data : resData.result.value!)
 //                    resData.result.value!
